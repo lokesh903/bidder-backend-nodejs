@@ -32,13 +32,13 @@ const DocSchema = new Schema<IUser, UserModel, IUserMethods>(
       lowercase: true,
       minlength: 3,
     },
-    lastName: {
-      type: String,
-      default: "",
-      trim: true,
-      lowercase: true,
-      minlength: 3,
-    },
+    // lastName: {
+    //   type: String,
+    //   default: "",
+    //   trim: true,
+    //   lowercase: true,
+    //   minlength: 3,
+    // },
     email: {
       type: String,
       default: "",
@@ -52,40 +52,40 @@ const DocSchema = new Schema<IUser, UserModel, IUserMethods>(
         "Please fill a valid email address",
       ],
     },
-    isActive: {
-      type: Boolean,
-      default: true,
-    },
-    password: {
-      type: String,
-      default: "",
-      required: false,
-      unique: true,
-      trim: true,
-    },
-    gender: {
-      type: String,
-      enum: ["MALE", "FEMALE", "OTHER"],
-      default: "OTHER",
-    },
-    image: {
-      type: String,
-      default: "",
-    },
-    isDeleted: {
-      type: Boolean,
-      default: false,
-    },
-    accessToken: {
-      type: String,
-      default: "",
-      index: true,
-    },
-    oneTimeCode: {
-      type: String,
-      default: "",
-      index: true,
-    },
+    // isActive: {
+    //   type: Boolean,
+    //   default: true,
+    // },
+    // password: {
+    //   type: String,
+    //   default: "",
+    //   required: false,
+    //   unique: true,
+    //   trim: true,
+    // },
+    // gender: {
+    //   type: String,
+    //   enum: ["MALE", "FEMALE", "OTHER"],
+    //   default: "OTHER",
+    // },
+    // image: {
+    //   type: String,
+    //   default: "",
+    // },
+    // isDeleted: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // accessToken: {
+    //   type: String,
+    //   default: "",
+    //   index: true,
+    // },
+    // oneTimeCode: {
+    //   type: String,
+    //   default: "",
+    //   index: true,
+    // },
   },
   {
     timestamps: true,

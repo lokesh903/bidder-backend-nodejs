@@ -9,6 +9,7 @@ interface IMessage extends Document {
 const MessageSchema: Schema = new Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   message: { type: String, required: true },
+  room_id: { type: String, required: true }, //added now 
   timestamp: { type: Date, default: Date.now }
 });
 
