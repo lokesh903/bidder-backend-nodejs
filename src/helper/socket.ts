@@ -8,10 +8,10 @@ const setupSocket = (io: Server) => {
     console.log('a user connected');
 
     socket.on('join', async (username: string) => {
-      let user = await User.findOne({ username });
+      let user = await User.findOne({userName: username });
 
       if (!user) {
-        user = new User({ username });
+        user = new User({ userName: username });
         await user.save();
       }
 

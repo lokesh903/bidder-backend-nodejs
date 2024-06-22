@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 import bcrypt from "bcryptjs";
 
 interface IUser extends Document {
-  firstName: string;
+  userName: string;
   lastName: string;
   email: string;
   isActive: boolean;
@@ -24,7 +24,7 @@ type UserModel = Model<IUser, {}, IUserMethods>;
 
 const DocSchema = new Schema<IUser, UserModel, IUserMethods>(
   {
-    firstName: {
+    userName: {
       type: String,
       default: "",
       required: true,
@@ -43,7 +43,7 @@ const DocSchema = new Schema<IUser, UserModel, IUserMethods>(
       type: String,
       default: "",
       index: true,
-      required: true,
+      required: false,
       unique: true,
       trim: true,
       lowercase: true,
@@ -59,7 +59,7 @@ const DocSchema = new Schema<IUser, UserModel, IUserMethods>(
     password: {
       type: String,
       default: "",
-      required: true,
+      required: false,
       unique: true,
       trim: true,
     },
