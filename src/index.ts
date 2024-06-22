@@ -36,7 +36,7 @@ app.use("/", router());
 const httpServer = http.createServer(app);
 const io = new Server(httpServer);
 
-httpServer.listen(() => {
+httpServer.listen(port,() => {
   // Start the HTTP server
   console.log(`Application listening on port ${port}!`);
   setupSocket(io);

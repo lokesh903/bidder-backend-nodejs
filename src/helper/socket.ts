@@ -9,15 +9,11 @@ const setupSocket = (io: Server) => {
 
     socket.on('join', async (username: string) => {
       let user = await User.findOne({ username });
-
       if (!user) {
         user = new User({ username });
         await user.save();
       }
-
       socket.data.user = user;
-    //   console.log(`${user.username} joined the chat`);
-
       // Send all messages to the newly connected user
       const messages = await Message.find().populate('user');
       socket.emit('allMessages', messages);

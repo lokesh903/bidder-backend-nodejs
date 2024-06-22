@@ -8,5 +8,4 @@ export default (router: express.Router) => {
   router.post('/auth/register', userController.register);
   router.post('/auth/login', userController.login);
   router.get('/user/getAllUser' ,userController.getAllUsers);
-
 };
