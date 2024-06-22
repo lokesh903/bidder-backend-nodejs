@@ -8,8 +8,8 @@ const register = async (req: express.Request, res: express.Response) => {
     const user = new Model.User(req.body);
 
     // Call the setPassword method to hash and set the password
-    const password = await user.setPassword(req.body.password);
-    user.password = password;
+    // const password = await user.setPassword(req.body.password);
+    // user.password = password;
     // Save the user document to the database
     await user.save();
     return res.status(200).json(user);
