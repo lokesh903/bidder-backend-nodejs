@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const url = process.env.MONGODB_URL || "mongodb://localhost:27017/new_db";
+const url = process.env.MONGODB_URL || "mongodb://127.0.0.1:27017/";
+
 mongoose.set('strictQuery', false);
 const connectionParams = {
   useNewUrlParser: true,
