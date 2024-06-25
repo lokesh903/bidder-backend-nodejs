@@ -1,17 +1,17 @@
 const express = require("express");
-const connectDB = require("./config/db");
 const dotenv = require("dotenv");
+dotenv.config();
 // const {chats}= require("./data/data");
 const cors = require('cors');
 const usesrRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
-
+const connectDB = require("./config/db");
 // const colors=require("colors");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 // const { Socket } = require("socket.io");
 
-dotenv.config();
+
 connectDB();
 
 const app = express();

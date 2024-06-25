@@ -1,6 +1,7 @@
+
 const mongoose = require("mongoose");
 const url = process.env.MONGODB_URL || "mongodb://127.0.0.1:27017/";
-
+console.log("url::",url,process.env.MONGODB_URL);
 mongoose.set('strictQuery', false);
 const connectionParams = {
   useNewUrlParser: true,
