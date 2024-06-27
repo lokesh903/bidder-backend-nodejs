@@ -3,9 +3,9 @@ const User = require("../models/userModel");
 const generateToken = require ("../config/generateToken");
 
 const registerUser=asyncHandler(async(req,res) => {
-    const {name,email,password,pic} = req.body;
+    const {name,email,password,pic, role} = req.body;
 
-    if(!name || !email || !password) {
+    if(!name || !email || !password || !role) {
         res.status(400);
         throw new Error("Please Enter all the fields");
     }
@@ -22,6 +22,7 @@ const registerUser=asyncHandler(async(req,res) => {
         email,
         password,
         pic,
+        role
     });
 
     if(user) {
@@ -30,6 +31,7 @@ const registerUser=asyncHandler(async(req,res) => {
             name : user.name,
             email : user.email,
             pic : user.pic,
+            role: user.role,
             token: generateToken(user._id),
         });
     }
@@ -51,6 +53,7 @@ const authUser = asyncHandler(async(req,res)=>{
             name:user.name,
             email:user.email,
             pic : user.pic,
+            role: user.role,
             token: generateToken(user._id)
         });
     }
