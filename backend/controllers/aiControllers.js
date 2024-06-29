@@ -6,13 +6,14 @@ const openai = new OpenAIApi({
 });
 
 const generatePrompt = (messages) => {
-    const chatLog = messages.map(m => `User: ${m.user}\nManager: ${m.manager}`).join('\n');
+    const chatLog = messages.map(m => `User: ${m?.user}\nManager: ${m?.manager}`).join('\n');
     return `${chatLog}\nManager:`;
 };
 
 // below function is responsible for generating response 
 module.exports.generateReply = async (chatHistory) => {
     const messages = chatHistory.history;
+    // console.log("ssssssssssssssss",messages);
     const prompt = generatePrompt(messages);
 
     try {
@@ -25,6 +26,9 @@ module.exports.generateReply = async (chatHistory) => {
 
         const replyText = response.choices[0].text.trim();
         const tokensUsed = response.usage.total_tokens;
+
+        console.log("reply txt",replyText);
+        console.log("token used",tokensUsed);
 
         return { reply: replyText, tokens_used: tokensUsed };
     } catch (error) {
