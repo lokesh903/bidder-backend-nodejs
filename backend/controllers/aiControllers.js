@@ -6,7 +6,7 @@ const openai = new OpenAIApi({
 });
 
 const generatePrompt = (messages) => {
-    const chatLog = messages.map(m => `User: ${m?.user}\nManager: ${m?.manager}`).join('\n');
+    const chatLog = messages.map(m => `User: ${m.user ? m.user : ''}\nManager: ${m.manager ? m.manager :''}`).join('\n');
     return `${chatLog}\nManager:`;
 };
 
@@ -20,7 +20,7 @@ module.exports.generateReply = async (chatHistory) => {
         const response = await openai.completions.create({
             model: 'gpt-3.5-turbo-instruct',
             prompt: prompt,
-            max_tokens: 100
+            max_tokens: 5
         });
         console.log("response::",response);
 
