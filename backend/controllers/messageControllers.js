@@ -2,6 +2,7 @@ const asyncHandler = require("express-async-handler");
 const Message = require("../models/messageModel");
 const User = require("../models/userModel");
 const Chat = require("../models/chatModel");
+const { generateReply } = require("./aiControllers");
 
 const allMessages = asyncHandler(async (req, res) => {
   try {
@@ -17,6 +18,15 @@ const allMessages = asyncHandler(async (req, res) => {
 
 const sendMessage = asyncHandler(async (req, res) => {
   const { content, chatId } = req.body;
+  let chat = {
+    "history": [
+      {"user": "Hi, I need help with my order.", "manager": "Sure, I'd be happy to help. Can you please provide your order number?"},
+      {"user": "My order number is 12345.", "manager": "Thank you. Let me check the status of your order."}
+    ]
+  }
+
+  temp = await generateReply(chat)
+  console.log(temp);
 
   if (!content || !chatId) {
     console.log("Invalid data passed into request");
