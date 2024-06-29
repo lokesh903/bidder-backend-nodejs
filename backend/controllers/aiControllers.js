@@ -13,7 +13,7 @@ const generatePrompt = (messages) => {
 };
 
 // below function is responsible for generating response 
-export const generateReply = async (chatHistory) => {
+const generateReply = async (chatHistory) => {
     const messages = chatHistory.history;
     const prompt = generatePrompt(messages);
 
@@ -33,3 +33,6 @@ export const generateReply = async (chatHistory) => {
     }
 };
 
+module.exports = {
+    generateReply
+  };

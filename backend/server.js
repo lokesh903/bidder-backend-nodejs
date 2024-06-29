@@ -6,6 +6,7 @@ const cors = require('cors');
 const usesrRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
+const aiRoutes = require("./routes/aiRoute");
 const connectDB = require("./config/db");
 // const colors=require("colors");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use("/api/user", usesrRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
+// app.use("/api/ai", aiRoutes);
 
 
 //////////////////////////////////////////////////////
