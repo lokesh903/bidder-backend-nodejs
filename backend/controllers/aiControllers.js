@@ -10,8 +10,8 @@ const generatePrompt = (messages) => {
     return `${chatLog}\nManager:`;
 };
 
-// below function is responsible for generating response 
-module.exports.generateReply = async (chatHistory) => {
+
+const generateReply =  async (chatHistory) => {
     const messages = chatHistory.history;
     // console.log("ssssssssssssssss",messages);
     const prompt = generatePrompt(messages);
@@ -34,5 +34,27 @@ module.exports.generateReply = async (chatHistory) => {
     } catch (error) {
         return { error: error.message };
     }
-};
+}
+
+const suggestMessage = async (text) => {
+    try {
+      const response = await openai.completions.create({
+        model: 'gpt-3.5-turbo-instruct',
+        prompt: `Finish my thought: ${text}`,
+        temperature: 0.5,
+        max_tokens: 1024,
+        top_p: 1,
+        frequency_penalty: 0.5,
+        presence_penalty: 0,
+      });
+      return { text: response.choices[0].text }
+    } catch (error) {
+      console.log("error message :",error.message);
+    }
+}
+
+// below function is responsible for generating response 
+module.exports = {
+    generateReply,suggestMessage
+}
 
