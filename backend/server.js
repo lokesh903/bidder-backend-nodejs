@@ -7,7 +7,9 @@ const usesrRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const aiRoutes = require("./routes/aiRoute");
+const tuningRoutes = require("./routes/fineTuningRoutes");
 const connectDB = require("./config/db");
+// require("../backend/services/finetuning")
 // const colors=require("colors");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 // const { Socket } = require("socket.io");
@@ -23,7 +25,8 @@ app.use(express.json());
 app.use("/api/user", usesrRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
-// app.use("/api/ai", aiRoutes);
+app.use("/api/ai", aiRoutes);
+app.use("/api/tuning", tuningRoutes);
 
 
 //////////////////////////////////////////////////////

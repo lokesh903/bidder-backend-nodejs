@@ -1,0 +1,18 @@
+{"prompt": "User: How can I place a bid on an item?\nAI:", "completion": "To place a bid, go to the item page, enter your bid amount, and click on the 'Place Bid' button."}
+{"prompt": "User: What happens if I win a bid?\nAI:", "completion": "If you win a bid, you will receive a confirmation email with payment instructions and shipping details."}
+{"prompt": "User: Can I retract my bid?\nAI:", "completion": "Once a bid is placed, it cannot be retracted. Please ensure you want to place the bid before confirming."}
+{"prompt": "User: What is the minimum bid increment?\nAI:", "completion": "The minimum bid increment is $5. This means your bid must be at least $5 higher than the current highest bid."}
+{"prompt": "User: How do I know if I am the highest bidder?\nAI:", "completion": "You will see a notification on the item page if you are the highest bidder. You can also check your bid status in your account."}
+{"prompt": "User: Can I place a bid outside auction hours?\nAI:", "completion": "No, bids can only be placed during the auction hours. Please check the auction schedule for the timings."}
+{"prompt": "User: What payment methods are accepted?\nAI:", "completion": "We accept credit/debit cards, PayPal, and bank transfers. Payment details will be provided upon winning a bid."}
+{"prompt": "User: Is there a buyer's premium?\nAI:", "completion": "Yes, a buyer's premium of 10% is added to the final bid amount. This fee helps cover the cost of the auction service."}
+{"prompt": "User: How long does an auction last?\nAI:", "completion": "Each auction lasts for 7 days from the start date. The end time will be displayed on the item page."}
+{"prompt": "User: Can I set a maximum bid amount?\nAI:", "completion": "Yes, you can set a maximum bid amount. The system will automatically bid on your behalf up to this amount."}
+{"prompt": "User: What happens if there is a tie bid?\nAI:", "completion": "In case of a tie bid, the first bid placed at that amount will be considered the highest."}
+{"prompt": "User: How are shipping costs calculated?\nAI:", "completion": "Shipping costs are calculated based on the item's weight and destination. They will be added to your final invoice."}
+{"prompt": "User: Can I view the bidding history?\nAI:", "completion": "Yes, the bidding history is available on the item page. It shows all previous bids and their timestamps."}
+{"prompt": "User: What is a reserve price?\nAI:", "completion": "A reserve price is the minimum amount the seller is willing to accept for the item. If the reserve is not met, the item will not be sold."}
+{"prompt": "User: Can I bid anonymously?\nAI:", "completion": "Yes, your username will not be displayed to other bidders. However, the seller will be notified if you win the bid."}
+{"prompt": "User: What is a proxy bid?\nAI:", "completion": "A proxy bid allows the system to bid on your behalf up to your maximum bid amount. This helps you stay in the lead without manually bidding."}
+{"prompt": "User: How do I cancel my account?\nAI:", "completion": "To cancel your account, please contact our support team. They will assist you with the process."}
+{"prompt": "User: What are the seller's responsibilities?\nAI:", "completion": "Sellers are responsible for accurately describing their items, setting appropriate starting bids, and shipping items promptly to winning bidders."}
