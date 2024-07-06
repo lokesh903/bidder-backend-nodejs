@@ -7,5 +7,6 @@ router.get('/list-files', apiController.ListFiles)
 router.get('/get-file', apiController.RetrieveFile)
 router.post('/create-finetune', apiController.CreateFineTune)
 router.get('/list-finetunes', apiController.ListFineTunes)
+router.get('/filetune-state', apiController.RetrieveState)
 
 module.exports = router

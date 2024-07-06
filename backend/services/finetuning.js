@@ -18,8 +18,16 @@ async function ListFineTunes() {
         return { status: 400, data: err }
     }
 }
+async function RetrieveStateFineTune(jobId) {
+    try {
+        return await openai.fineTuning.jobs.retrieve(jobId)
+    } catch(err) {
+        return { status: 400, data: err }
+    }
+}
 
 module.exports = {
     CreateFineTune,
-    ListFineTunes
+    ListFineTunes,
+    RetrieveStateFineTune
 }

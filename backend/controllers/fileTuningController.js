@@ -30,11 +30,17 @@ async function ListFineTunes(req, res) {
     const response = await finetuneService.ListFineTunes()
     res.send(response)
 }
+async function RetrieveState(req, res) {
+    var jobId = req.query["jobId"]
+    const response = await finetuneService.RetrieveStateFineTune(jobId)
+    res.send(response)
+}
 
 module.exports = {
     UploadFile,
     ListFiles,
     RetrieveFile,
     CreateFineTune,
-    ListFineTunes
+    ListFineTunes,
+    RetrieveState
 }
