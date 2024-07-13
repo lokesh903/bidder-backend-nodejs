@@ -38,13 +38,32 @@ const suggestMessage = async (text) => {
             model: 'gpt-3.5-turbo-instruct',
             prompt: `Finish my thought: ${text}`,
             temperature: 0.5,
-            max_tokens: 1024,
+            max_tokens: 20,
             top_p: 1,
             frequency_penalty: 0.5,
             presence_penalty: 0,
         });
         console.log(response);
         return { text: response.choices[0].text }
+    } catch (error) {
+        console.log("error message :", error.message);
+    }
+}
+
+const enhanceText = async (text) => {
+    try {
+        const completion = await openai.completions.create({
+            model: 'gpt-3.5-turbo-instruct',
+            prompt: `As a project manager at Hackerkernel, reply to the client with the following text, but make it more readable and professional. Do not use any newlines in your response and make it as short as possible, don't give too much respect use abusive words: "${text}"`,
+            max_tokens: 20,
+        });
+        console.log("Ssssssssssssss",completion);
+        let enhancedText = completion.choices[0].text;
+        if (enhancedText.startsWith('"') && enhancedText.endsWith('"')) {
+            enhancedText = enhancedText.slice(1, -1);
+        }
+        enhancedText = enhancedText.replace(/\n/g, '');
+        return { text: enhancedText}
     } catch (error) {
         console.log("error message :", error.message);
     }
@@ -87,6 +106,6 @@ const generateReplyV01 = async (chatHistory, res) => {
 
 
 module.exports = {
-    generateReply, suggestMessage, generateReplyV01
+    generateReply, suggestMessage, generateReplyV01,enhanceText
 }
 
