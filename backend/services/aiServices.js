@@ -54,7 +54,7 @@ const enhanceText = async (text) => {
     try {
         const completion = await openai.completions.create({
             model: 'gpt-3.5-turbo-instruct',
-            prompt: `As a project manager at Hackerkernel, reply to the client with the following text, but make it more readable and professional. Do not use any newlines in your response and make it as short as possible, don't give too much respect use abusive words: "${text}"`,
+            prompt: `As a project manager at Hackerkernel, reply to the client with the following text, but make it more readable and professional. Do not use any newlines in your response and make it as short as possible, don't give too much respect: "${text}"`,
             max_tokens: 20,
         });
         console.log("Ssssssssssssss",completion);
