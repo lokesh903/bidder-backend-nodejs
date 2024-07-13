@@ -53,7 +53,7 @@ const generatePromptV01 = (messages) => {
         const keys = Object.keys(entry);
         return keys.map(key => {
             let role;
-            if (key === 'user') {
+            if (key === 'client') {
                 role = 'user';
             } else if (key === 'manager') {
                 role = 'system'; // or 'manager' if that's the intended role
@@ -67,6 +67,7 @@ const generatePromptV01 = (messages) => {
 const generateReplyV01 = async (chatHistory, res) => {
     const messages = chatHistory.body.history;
     const prompt = generatePromptV01(messages);
+    console.log(prompt);
     try {
         const response = await openai.chat.completions.create({
             messages: prompt,
