@@ -16,13 +16,13 @@ async function generatePrompt(messages) {
 
 async function generateReply(message) {
     let messages = await generatePrompt(message.history)
-    const responsibilityPrompt = { role: 'system', content: 'You are a project manager of HackerKernel who is determined to get the project even if client is not ready he will try to do the best to convence him and going to reply user accordingly to the given conversation.' }
+    const responsibilityPrompt = { role: 'system', content: 'You are a project manager of HackerKernel who is determined to get the project even if client is not ready he will try to do the best to convence him and going to reply user accordingly to the given conversation. Note:- kindly complete all the sentence within token limit' }
     const prompt = [responsibilityPrompt, ...messages]
     try {
         const response = await openai.chat.completions.create({
             model: 'gpt-3.5-turbo',
             messages: prompt,
-            max_tokens: 20,
+            max_tokens: 50, 
         });
         const replyText = response.choices[0].message.content.trim();
         const tokensUsed = response.usage.total_tokens;
